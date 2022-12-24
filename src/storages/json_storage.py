@@ -2,7 +2,7 @@ import os
 import json
 import atexit
 from typing import Optional
-from storages.base_storage import BaseStorage
+from storages.base_nosql_storage import BaseNoSQLStorage
 
 
 def create_dir(file_path):
@@ -13,7 +13,7 @@ def create_dir(file_path):
             json.dump({}, file)
 
 
-class JSONStorage(BaseStorage):
+class JSONStorage(BaseNoSQLStorage):
     def __init__(self, file_path: Optional[str]):
         super().__init__()
         self.file_path = file_path if file_path is not None else "./.storages/data.json"
@@ -24,7 +24,7 @@ class JSONStorage(BaseStorage):
 
     def load(self):
         with open(self.file_path, 'r') as file:
-            self.data = json.load(file)
+            self._data = json.load(file)
 
     def dump(self):
         with open(self.file_path, 'w') as file:

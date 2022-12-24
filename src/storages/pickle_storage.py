@@ -2,7 +2,7 @@ import os
 import pickle
 import atexit
 from typing import Optional
-from storages.base_storage import BaseStorage
+from storages.base_nosql_storage import BaseNoSQLStorage
 
 
 def create_dir(file_path):
@@ -13,7 +13,7 @@ def create_dir(file_path):
             pickle.dump({}, file, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-class PickleStorage(BaseStorage):
+class PickleStorage(BaseNoSQLStorage):
     def __init__(self, file_path: Optional[str]):
         super().__init__()
         self.file_path = file_path if file_path is not None else "./.storages/data.pkl"
@@ -24,7 +24,7 @@ class PickleStorage(BaseStorage):
 
     def load(self):
         with open(self.file_path, 'rb') as file:
-            self.data = pickle.load(file)
+            self._data = pickle.load(file)
 
     def dump(self):
         with open(self.file_path, 'wb') as file:
