@@ -1,7 +1,5 @@
 # TO DO list
 
 - [x] Async version
-- [ ] SQL storages
-  - [ ] SQLite
-  - [ ] PostgreSQL
+- [ ] Timeout caching
 - [ ] Publish on PyPI
