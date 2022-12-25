@@ -8,9 +8,9 @@ from storages.sync_storages.redis_storage import RedisStorage
 
 
 def load_storage(storage_type: StorageType,
-                      file_path: Optional[str] = None,
-                      redis_url: Optional[str] = None,
-                      redis_data_key: Optional[str] = None):
+                 file_path: Optional[str] = None,
+                 redis_url: Optional[str] = None,
+                 redis_data_key: Optional[str] = None):
     storage = {
         StorageType.pickle: PickleStorage,
         StorageType.json: JSONStorage,

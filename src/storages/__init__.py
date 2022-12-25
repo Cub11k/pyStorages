@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import Union
 
 from storages import sync_storages
 from storages import async_storages
