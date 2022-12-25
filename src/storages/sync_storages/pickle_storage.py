@@ -2,7 +2,7 @@ import os
 import pickle
 import atexit
 from typing import Optional
-from storages.base_nosql_storage import BaseNoSQLStorage
+from storages.sync_storages.base_nosql_storage import BaseNoSQLStorage
 
 
 def create_dir(file_path):

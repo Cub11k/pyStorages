@@ -1,6 +1,6 @@
 # TO DO list
 
-- [ ] Async version
+- [x] Async version
 - [ ] SQL storages
   - [ ] SQLite
   - [ ] PostgreSQL

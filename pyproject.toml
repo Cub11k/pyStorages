@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "storages"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Konstantin Ostashenko", email="ostashenkokd@gmail.com" },
 ]
@@ -19,6 +19,7 @@ classifiers = [
 
 [project.optional-dependencies]
 redis = ["redis>=3.4.1"]
+async_redis = ["aioredis>=2.0.0"]
 
 [project.urls]
 "Homepage" = "https://github.com/Cub11k/storages"
