@@ -3,7 +3,7 @@ requires = ["setuptools>=60.2.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "storages"
+name = "pyStorages"
 version = "0.0.2"
 authors = [
   { name="Konstantin Ostashenko", email="ostashenkokd@gmail.com" },
