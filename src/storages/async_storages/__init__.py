@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 
 from storages import StorageType
 
@@ -22,9 +22,14 @@ async def load_storage(storage_type: StorageType,
         return await storage[storage_type].create(redis_url, redis_data_key)
 
 
+Storage = Union[
+    PickleStorage, JSONStorage, RedisStorage,
+]
+
 __all__ = (
     "PickleStorage",
     "JSONStorage",
     "RedisStorage",
+    "Storage",
     "load_storage",
 )
