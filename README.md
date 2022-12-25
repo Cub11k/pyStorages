@@ -1,4 +1,4 @@
-# storages
+# pyStorages
 
 Simple data storages written in Python
 
@@ -10,7 +10,7 @@ Simple data storages written in Python
 ## Installation
 
 ```bash
-pip install git+https://github.com/Cub11k/storages.git
+pip install git+https://github.com/Cub11k/pyStorages.git
 ```
 
 ## Usage
