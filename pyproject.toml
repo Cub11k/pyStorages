@@ -19,11 +19,12 @@ classifiers = [
 
 [project.optional-dependencies]
 redis = ["redis>=3.4.1"]
-async_redis = ["aioredis>=2.0.0"]
+aioredis = ["aioredis>=2.0.0"]
 
 [project.urls]
-"Homepage" = "https://github.com/Cub11k/storages"
+"Homepage" = "https://github.com/Cub11k/pyStorages"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["storages*"]
 namespaces = false
