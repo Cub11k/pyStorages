@@ -1,13 +1,6 @@
-from enum import Enum
-
 from storages import sync_storages
 from storages import async_storages
-
-
-class StorageType(Enum):
-    pickle = "pickle"
-    json = "json"
-    redis = "redis"
+from storages.types import StorageType
 
 
 __all__ = (
