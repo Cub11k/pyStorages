@@ -1,6 +1,6 @@
 from typing import Optional, Union
 
-from storages import StorageType
+from storages.types import StorageType
 
 from storages.async_storages.pickle_storage import PickleStorage
 from storages.async_storages.json_storage import JSONStorage
