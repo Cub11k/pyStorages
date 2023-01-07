@@ -10,6 +10,8 @@ Simple data storages written in Python
 ## Installation
 
 ```bash
+pip install pyStorages
+# or
 pip install git+https://github.com/Cub11k/pyStorages.git
 ```
 
