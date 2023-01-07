@@ -15,6 +15,13 @@ pip install pyStorages
 pip install git+https://github.com/Cub11k/pyStorages.git
 ```
 
+For `RedisStorage` use extras:
+```bash
+pip install pyStorages[redis]
+# or, for async version
+pip install pyStorages[aioredis]
+```
+
 ## Usage
 
 ```python
