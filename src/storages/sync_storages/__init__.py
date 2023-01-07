@@ -12,13 +12,13 @@ def load_storage(storage_type: StorageType,
                  redis_url: Optional[str] = None,
                  redis_data_key: Optional[str] = None):
     storage = {
-        StorageType.pickle: PickleStorage,
-        StorageType.json: JSONStorage,
-        StorageType.redis: RedisStorage,
+        StorageType.PICKLE: PickleStorage,
+        StorageType.JSON: JSONStorage,
+        StorageType.REDIS: RedisStorage,
     }
-    if storage_type in [StorageType.pickle, StorageType.json]:
+    if storage_type in [StorageType.PICKLE, StorageType.JSON]:
         return storage[storage_type](file_path)
-    elif storage_type == StorageType.redis:
+    elif storage_type == StorageType.REDIS:
         return storage[storage_type](redis_url, redis_data_key)
 
 
