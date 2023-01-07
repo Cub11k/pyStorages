@@ -1,5 +1,5 @@
 ## Description
-Include changes, new features and etc:
+Include changes, new features, etc:
 
 ## Describe your tests
 How did you test your change?
