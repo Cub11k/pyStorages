@@ -2,6 +2,6 @@ from enum import Enum
 
 
 class StorageType(Enum):
-    pickle = "pickle"
-    json = "json"
-    redis = "redis"
+    PICKLE = "pickle"
+    JSON = "json"
+    REDIS = "redis"
