@@ -19,7 +19,7 @@ pip install git+https://github.com/Cub11k/pyStorages.git
 from storages import StorageType
 from storages.sync_storages import load_storage
 
-storage = load_storage(StorageType.json)
+storage = load_storage(StorageType.JSON)
 
 storage.set_data(
     test="test",
@@ -36,7 +36,7 @@ from storages.async_storages import load_storage
 
 
 async def main():
-    storage = await load_storage(StorageType.json)
+    storage = await load_storage(StorageType.JSON)
 
     await storage.set_data(
         test="test",
