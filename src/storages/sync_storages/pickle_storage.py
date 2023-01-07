@@ -6,7 +6,7 @@ from storages.sync_storages.base_nosql_storage import BaseNoSQLStorage
 
 
 def create_dir(file_path):
-    dirs = file_path.rsplit('/', maxsplit=1)[0]
+    dirs, filename = os.path.split(file_path)
     os.makedirs(dirs, exist_ok=True)
     if not os.path.isfile(file_path):
         with open(file_path, 'wb') as file:
