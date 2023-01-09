@@ -68,15 +68,15 @@ This method allows you to delete all data.
 ```
 [async] def get_data(*keys)
 ```
-This method allows you to delete values by keys.
+This method allows you to get values by keys.
 
 **Parameters**
 
-`keys` - list of keys, which will be returned, if present
+`keys` - list of keys, which values will be returned, if present
 
 **Raises** `KeyError` - in case of non-existing key
 
-**Returns** - `None`
+**Returns** - `tuple`
 
 ## Examples
 
