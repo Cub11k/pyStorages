@@ -1,6 +1,6 @@
-# pyStorages
+# <p align="center">pyStorages</p>
 
-Simple data storages written in Python
+<p align="center">Simple data storages written in Python</p>
 
 ### Currently supported storage types:
 - JSON
@@ -22,37 +22,62 @@ pip install pyStorages[redis]
 pip install pyStorages[aioredis]
 ```
 
-## Usage
+## Getting started
 
-```python
-from storages import StorageType
-from storages.sync_storages import load_storage
+pyStorages is the simplest way to interact with different types of storages,
+where data is stored and treated as a dictionary, in terms of python -  `dict`.
 
-storage = load_storage(StorageType.JSON)
+Storage class interface is pretty convenient and is described below:
 
-storage.set_data(
-    test="test",
-    test_int=5,
-    test_list=[1, "2"],
-    test_dict={"key1": 1, "key2": 2}
-)
+### Set data
 ```
-
-```python
-import asyncio
-from storages import StorageType
-from storages.async_storages import load_storage
-
-
-async def main():
-    storage = await load_storage(StorageType.JSON)
-
-    await storage.set_data(
-        test="test",
-        test_int=5,
-        test_list=[1, "2"],
-        test_dict={"key1": 1, "key2": 2}
-    )
-
-asyncio.run(main())
+[async] def set_data(**kwargs)
 ```
+This method allows you to update data according to key-value pairs.
+Existing key-values pairs not covered by passed keys won't be affected.
+
+**Parameters**
+
+`kwargs` - key-value pairs, according to which, the data will be updated
+
+**Returns** - `None`
+
+### Delete data
+```
+[async] def delete_data(*keys)
+```
+This method allows you to delete values by keys.
+
+**Parameters**
+
+`keys` - list of keys, which will be deleted, if present
+
+**Raises** `KeyError` - in case of receiving a non-existing key
+
+**Returns** - `None`
+
+### Reset data
+```
+[async] def reset_data()
+```
+This method allows you to delete all data.
+
+**Returns** - `None`
+
+### Get data
+```
+[async] def get_data(*keys)
+```
+This method allows you to delete values by keys.
+
+**Parameters**
+
+`keys` - list of keys, which will be returned, if present
+
+**Raises** `KeyError` - in case of non-existing key
+
+**Returns** - `None`
+
+## Examples
+
+_Coming soon..._
