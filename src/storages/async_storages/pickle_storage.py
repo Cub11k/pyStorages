@@ -20,8 +20,6 @@ class PickleStorage(BaseNoSQLStorage):
         self.file_path = file_path if file_path is not None else "./.storages/data.pkl"
         create_dir(self.file_path)
 
-        atexit.register(self.dump)
-
     @classmethod
     async def create(cls, file_path: Optional[str]):
         obj = cls(file_path)

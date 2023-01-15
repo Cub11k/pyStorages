@@ -25,8 +25,6 @@ class RedisStorage(BaseNoSQLStorage):
         self.redis = create_connection_pool(redis_url if redis_url is not None else "redis://localhost/")
         self.data_key = data_key if data_key is not None else "data"
 
-        atexit.register(self.dump)
-
     @classmethod
     async def create(cls, file_path: Optional[str], data_key: Optional[str]):
         obj = cls(file_path, data_key)
