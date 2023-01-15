@@ -79,6 +79,9 @@ Note: if no keys are passed, all data will be returned.
 >>> get_data(['key1', 'key2'])
 (data['key1']['key2'],)
 
+>>> get_data([])
+(data,)
+
 >>> get_data()
 (data,)
 ```
