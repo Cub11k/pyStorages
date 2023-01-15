@@ -39,5 +39,5 @@ class RedisStorage(BaseNoSQLStorage):
 
     async def dump(self):
         connection = aioredis.Redis(connection_pool=self.redis)
-        await connection.set(self.data_key, json.dumps(self.data))
+        await connection.set(self.data_key, json.dumps(self._data))
         await connection.close()

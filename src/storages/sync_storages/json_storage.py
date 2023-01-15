@@ -24,8 +24,11 @@ class JSONStorage(BaseNoSQLStorage):
 
     def load(self):
         with open(self.file_path, 'r') as file:
-            self._data = json.load(file)
+            json_data = file.read()
+        if json_data == "":
+            json_data = "{}"
+        self._data = json.loads(json_data)
 
     def dump(self):
         with open(self.file_path, 'w') as file:
-            json.dump(self.data, file)
+            json.dump(self._data, file)

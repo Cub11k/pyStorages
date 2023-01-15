@@ -28,4 +28,4 @@ class PickleStorage(BaseNoSQLStorage):
 
     def dump(self):
         with open(self.file_path, 'wb') as file:
-            pickle.dump(self.data, file, protocol=pickle.HIGHEST_PROTOCOL)
+            pickle.dump(self._data, file, protocol=pickle.HIGHEST_PROTOCOL)

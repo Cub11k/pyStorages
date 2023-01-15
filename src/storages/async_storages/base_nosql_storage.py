@@ -15,22 +15,6 @@ class BaseNoSQLStorage(abc.ABC):
     async def dump(self):
         raise NotImplementedError
 
-    def __getattribute__(self, item):
-        if item == "_data":
-            return AttributeError(
-                "Direct access to data is restricted for consistency, use get_data(*keys) method instead"
-            )
-        else:
-            object.__getattribute__(self, item)
-
-    def __setattr__(self, key, value):
-        if key == "_data":
-            return AttributeError(
-                "Direct data assignment is restricted for consistency, use set_data(**kwargs) method instead"
-            )
-        else:
-            object.__setattr__(self, key, value)
-
     async def set_data(self, **kwargs):
         updated = False
         for key, value in kwargs.items():

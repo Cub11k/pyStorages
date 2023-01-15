@@ -28,9 +28,11 @@ class JSONStorage(BaseNoSQLStorage):
     async def load(self):
         async with aiofiles.open(self.file_path, 'r') as file:
             json_data = await file.read()
+        if json_data == "":
+            json_data = "{}"
         self._data = json.loads(json_data)
 
     async def dump(self):
-        async with open(self.file_path, 'w') as file:
+        async with aiofiles.open(self.file_path, 'w') as file:
             json_data = json.dumps(self._data)
             await file.write(json_data)

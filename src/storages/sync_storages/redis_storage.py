@@ -34,5 +34,5 @@ class RedisStorage(BaseNoSQLStorage):
 
     def dump(self):
         connection = Redis(connection_pool=self.redis)
-        connection.set(self.data_key, json.dumps(self.data))
+        connection.set(self.data_key, json.dumps(self._data))
         connection.close()
