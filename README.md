@@ -69,6 +69,19 @@ This method allows you to delete all data.
 [async] def get_data(*keys)
 ```
 This method allows you to get values by keys.
+For nested keys use `list`.
+
+Note: if no keys are passed, all data will be returned.
+```
+>>> get_data('key1', 'key2', 'key3')
+(data['key1'], data['key2'], data['key3'])
+
+>>> get_data(['key1', 'key2'])
+(data['key1']['key2'],)
+
+>>> get_data()
+(data,)
+```
 
 **Parameters**
 
