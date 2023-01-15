@@ -11,6 +11,7 @@ authors = [
 description = "Simple data storages package"
 readme = "README.md"
 requires-python = ">=3.7"
+dependencies = ["aiofiles>=22.1.0"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
