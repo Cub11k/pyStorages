@@ -1,5 +1,4 @@
 import json
-import atexit
 from typing import Optional
 from storages.async_storages.base_nosql_storage import BaseNoSQLStorage
 

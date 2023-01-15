@@ -1,6 +1,5 @@
 import os
 import json
-import atexit
 import aiofiles
 from typing import Optional
 from storages.async_storages.base_nosql_storage import BaseNoSQLStorage
