@@ -37,9 +37,19 @@ class BaseNoSQLStorage(abc.ABC):
         await self.dump()
 
     async def get_data(self, *keys) -> tuple:
+        if len(keys) == 0:
+            return self._data,
         result = []
         for key in keys:
-            if key in self._data.keys():
+            if isinstance(key, list):
+                sub_data = self._data
+                for idx, subkey in enumerate(key):
+                    if subkey in sub_data.keys():
+                        sub_data = sub_data[subkey]
+                    else:
+                        raise KeyError("->".join(key[:idx + 1]))
+                result.append(sub_data)
+            elif key in self._data.keys():
                 result.append(self._data[key])
             else:
                 raise KeyError(key)
